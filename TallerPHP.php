@@ -1,4 +1,3 @@
-¡Nuevo! Combinaciones de teclas … Las combinaciones de teclas de Drive se han actualizado para que puedas navegar escribiendo las primeras letras
 <!DOCTYPE html>
 <html>
 
