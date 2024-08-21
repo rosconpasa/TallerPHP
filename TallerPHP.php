@@ -1,3 +1,4 @@
+¡Nuevo! Combinaciones de teclas … Las combinaciones de teclas de Drive se han actualizado para que puedas navegar escribiendo las primeras letras
 <!DOCTYPE html>
 <html>
 
@@ -223,6 +224,7 @@ Capacidad
 
                 <?php 
                     if($_SERVER["REQUEST_METHOD"] == "POST"){
+                       
                         $cedula = $_POST ["cedula"];
                         $nombre = $_POST ["nombre"];
                         $ciudad = $_POST ["ciudad"];
@@ -231,7 +233,33 @@ Capacidad
                         $hora = $_POST ["hora"];
                         $dias = $_POST ["dias"];
                         $cobertura = $_POST ["cobertura"];
-                        $costeno = $_POST ["costeno"];                        
+                        $costeno = $_POST ["costeno"];    
+                        $total=0;
+
+                        if($auto == "Economico"){
+                            $total = 150000 * $dias;
+                        }
+                            if($auto=="Mediano"){
+                            $total = 200000 * $dias;
+                        }
+                        if($auto=="Grande"){
+                            $total = 400000 * $dias;
+                        }
+                        if($auto=="Camioneta"){
+                            $total = 350000 * $dias;
+                        }    
+
+                        if(isset($_POST["cobertura"])){
+                            $total += 20000*$dias;
+                        }
+                        
+                        if(isset($_POST["costeno"])){
+                            
+                            $total-=$total*0.1;
+
+                        }
+                        
+                        
                     }
                 ?>
             </div>
@@ -239,6 +267,16 @@ Capacidad
         </div>
 
     </div>
+
+    <div id="div2">
+
+    <?php 
+                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+                             echo "El costo del alquiler es de ".$total." pesos";
+                    }
+                ?>
+    </div>
+    
 
 </body>
 
