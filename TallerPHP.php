@@ -161,7 +161,7 @@ Capacidad
                                     <option>Economico</option>
                                     <option>Mediano</option>
                                     <option>Grande</option>
-                                    <option>Camnioneta</option>
+                                    <option>Camioneta</option>
                                 </select>
                             </td>
                         </tr>
